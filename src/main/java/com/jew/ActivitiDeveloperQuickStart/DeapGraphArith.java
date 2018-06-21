@@ -1,5 +1,7 @@
 package com.jew.ActivitiDeveloperQuickStart;
 
+import java.util.LinkedList;
+
 import static com.jew.ActivitiDeveloperQuickStart.Graph.MAX;
 
 /**
@@ -60,6 +62,44 @@ public class DeapGraphArith {
 
         }
     }
+
+    /**
+     * 广度优先算法 层级遍历
+     */
+    public void broadFirstSearch(){
+        for (int i=0;i<graph.num;i++)
+        {
+            if (!graph.isVisited[i]) {
+                broadFirstSearch(i);
+            }
+
+        }
+    }
+
+    /**
+     * 实现深度遍历
+     * @param i
+     */
+    private void broadFirstSearch(int i) {
+        int u,w;
+        LinkedList<Integer> queue=new LinkedList<>();
+        System.out.println("访问到："+i+"顶点");
+        graph.isVisited[i]=true;
+        queue.add(i);
+        while (!queue.isEmpty()){
+            u=queue.removeFirst();
+            w=getFirstNeighbor(u);
+            while (w!=-1){
+                if (!graph.isVisited[w]){
+                    System.out.println("访问到："+w+"顶点");
+                    graph.isVisited[w]=true;
+                    queue.add(w);
+                }
+                w=getNextNeighbor(u,w);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         DeapGraphArith dgf=new DeapGraphArith();
         Graph graph = new Graph(9);
@@ -85,6 +125,7 @@ public class DeapGraphArith {
         graph.m[8] = a9;
 
         dgf.graph=graph;
-        dgf.depthFirstSearch();
+//        dgf.depthFirstSearch();
+        dgf.broadFirstSearch();
     }
 }
