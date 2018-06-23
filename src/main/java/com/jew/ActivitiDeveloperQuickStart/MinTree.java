@@ -1,5 +1,7 @@
 package com.jew.ActivitiDeveloperQuickStart;
 
+import java.util.Arrays;
+
 import static com.jew.ActivitiDeveloperQuickStart.Graph.MAX;
 
 /**
@@ -8,6 +10,38 @@ import static com.jew.ActivitiDeveloperQuickStart.Graph.MAX;
 public class MinTree {
     Graph graph;
 
+    /**
+     * 普里姆算法
+     */
+    public void prim(){
+        int[] lowcost=new int[graph.num];//最小代價頂點權值的數組，為0表示已經找到最小權值
+        int[] adjvex=new int[graph.num];//頂點的數組
+        int min,minId,sum=0;
+        for (int i=1;i<graph.num;i++){
+            lowcost[i] = graph.m[0][i];
+        }
+        for (int i=1;i<graph.num;i++){
+            min=MAX;
+            minId=0;
+            for (int j=1;j<graph.num;j++){
+                if (lowcost[j]<min&&lowcost[j]>0){
+                    min=lowcost[j];
+                    minId=j;
+                }
+            }
+            System.out.println("頂點"+adjvex[minId]+"最小權值"+min);
+            sum+=min;
+            lowcost[minId]=0;
+            for (int j=1;j<graph.num;j++){
+                if (lowcost[j]!=0&&graph.m[minId][j]<lowcost[j]){
+                    lowcost[j]=graph.m[minId][j];
+                    adjvex[j]=minId;
+                }
+            }
+            System.out.println(Arrays.toString(lowcost));
+        }
+        System.out.println("最小生成樹權值="+sum);
+    }
     public static void main(String[] args) {
         MinTree minTree=new MinTree();
         Graph graph = new Graph(9);
@@ -33,5 +67,6 @@ public class MinTree {
         graph.m[8] = a9;
 
         minTree.graph=graph;
+        minTree.prim();
     }
 }
