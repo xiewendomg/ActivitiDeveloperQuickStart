@@ -80,4 +80,6 @@ public class Graph {
         System.out.println("入度="+app.getInDegree(2));
         System.out.println("权值="+app.getWeight(1,2));
     }
+    
+    
 }
