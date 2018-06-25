@@ -134,7 +134,7 @@ public class DeapGraphArith {
 					minId = j;
 				}
 			}
-			System.out.println("顶点：" + adjvex[minId] + "权值：" + min);
+//			System.out.println("顶点：" + adjvex[minId] + "权值：" + min);
 			sum += min;
 			lowcost[minId] = 0;
 			for (int j = 0; j < graph.num; j++) {
