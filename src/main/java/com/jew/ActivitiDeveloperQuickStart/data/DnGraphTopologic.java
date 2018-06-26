@@ -1,4 +1,4 @@
-package com.jew.ActivitiDeveloperQuickStart;
+package com.jew.ActivitiDeveloperQuickStart.data;
 
 import java.util.Stack;
 
