@@ -14,10 +14,13 @@ public class MinTree {
      * 普里姆算法
      */
     public void prim(){
+
+    }
+    public void prim(int f){
         int[] lowcost=new int[graph.num];//最小代價頂點權值的數組，為0表示已經找到最小權值
         int[] adjvex=new int[graph.num];//頂點的數組
         int min,minId,sum=0;
-        for (int i=1;i<graph.num;i++){
+        for (int i=0;i<graph.num;i++){
             lowcost[i] = graph.m[0][i];
         }
         for (int i=1;i<graph.num;i++){
