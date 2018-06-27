@@ -1,4 +1,4 @@
-package com.jew.ActivitiDeveloperQuickStart;
+package com.jew.ActivitiDeveloperQuickStart.data;
 
 import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.ProcessEngineConfiguration;//Activiti流程引擎和配置

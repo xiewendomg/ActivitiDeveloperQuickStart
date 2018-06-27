@@ -1,6 +1,6 @@
-package com.jew.ActivitiDeveloperQuickStart;
+package com.jew.ActivitiDeveloperQuickStart.data;
 
-import static com.jew.ActivitiDeveloperQuickStart.Graph.MAX;
+import static com.jew.ActivitiDeveloperQuickStart.data.Graph.MAX;
 
 /**
  * Created by Administrator on 2018/6/24.

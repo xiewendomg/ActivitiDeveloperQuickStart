@@ -1,8 +1,8 @@
-package com.jew.ActivitiDeveloperQuickStart;
+package com.jew.ActivitiDeveloperQuickStart.data;
+
+import static com.jew.ActivitiDeveloperQuickStart.data.Graph.MAX;
 
 import java.util.Arrays;
-
-import static com.jew.ActivitiDeveloperQuickStart.Graph.MAX;
 
 /**
  * 最小生成树 普里姆算法 克鲁斯卡尔算法

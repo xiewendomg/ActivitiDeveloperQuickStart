@@ -1,6 +1,6 @@
-package com.jew.ActivitiDeveloperQuickStart;
+package com.jew.ActivitiDeveloperQuickStart.data;
 
-import static com.jew.ActivitiDeveloperQuickStart.Graph.MAX;
+import static com.jew.ActivitiDeveloperQuickStart.data.Graph.MAX;
 
 import java.util.Arrays;
 import java.util.LinkedList;
