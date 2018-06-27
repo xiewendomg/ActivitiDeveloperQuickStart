@@ -1,7 +1,5 @@
 package com.jew.ActivitiDeveloperQuickStart.data;
 
-import static com.jew.ActivitiDeveloperQuickStart.data.Graph.MAX;
-
 import java.util.Arrays;
 
 /**
@@ -24,7 +22,7 @@ public class MinTree {
             lowcost[i] = graph.m[0][i];
         }
         for (int i=1;i<graph.num;i++){
-            min=MAX;
+            min= Graph.MAX;
             minId=0;
             for (int j=1;j<graph.num;j++){
                 if (lowcost[j]<min&&lowcost[j]>0){
@@ -49,15 +47,15 @@ public class MinTree {
         MinTree minTree=new MinTree();
         Graph graph = new Graph(9);
 
-        int [] a1 = new int[]{0,10,MAX,MAX,MAX,11,MAX,MAX,MAX};
-        int [] a2 = new int[]{10,0,18,MAX,MAX,MAX,16,MAX,12};
-        int [] a3 = new int[]{MAX,MAX,0,22,MAX,MAX,MAX,MAX,8};
-        int [] a4 = new int[]{MAX,MAX,22,0,20,MAX,MAX,16,21};
-        int [] a5 = new int[]{MAX,MAX,MAX,20,0,26,MAX,7,MAX};
-        int [] a6 = new int[]{11,MAX,MAX,MAX,26,0,17,MAX,MAX};
-        int [] a7 = new int[]{MAX,16,MAX,MAX,MAX,17,0,19,MAX};
-        int [] a8 = new int[]{MAX,MAX,MAX,16,7,MAX,19,0,MAX};
-        int [] a9 = new int[]{MAX,12,8,21,MAX,MAX,MAX,MAX,0};
+        int [] a1 = new int[]{0,10, Graph.MAX, Graph.MAX, Graph.MAX,11, Graph.MAX, Graph.MAX, Graph.MAX};
+        int [] a2 = new int[]{10,0,18, Graph.MAX, Graph.MAX, Graph.MAX,16, Graph.MAX,12};
+        int [] a3 = new int[]{Graph.MAX, Graph.MAX,0,22, Graph.MAX, Graph.MAX, Graph.MAX, Graph.MAX,8};
+        int [] a4 = new int[]{Graph.MAX, Graph.MAX,22,0,20, Graph.MAX, Graph.MAX,16,21};
+        int [] a5 = new int[]{Graph.MAX, Graph.MAX, Graph.MAX,20,0,26, Graph.MAX,7, Graph.MAX};
+        int [] a6 = new int[]{11, Graph.MAX, Graph.MAX, Graph.MAX,26,0,17, Graph.MAX, Graph.MAX};
+        int [] a7 = new int[]{Graph.MAX,16, Graph.MAX, Graph.MAX, Graph.MAX,17,0,19, Graph.MAX};
+        int [] a8 = new int[]{Graph.MAX, Graph.MAX, Graph.MAX,16,7, Graph.MAX,19,0, Graph.MAX};
+        int [] a9 = new int[]{Graph.MAX,12,8,21, Graph.MAX, Graph.MAX, Graph.MAX, Graph.MAX,0};
 
         graph.m[0] = a1;
         graph.m[1] = a2;

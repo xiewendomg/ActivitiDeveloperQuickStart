@@ -1,7 +1,5 @@
 package com.jew.ActivitiDeveloperQuickStart.data;
 
-import java.util.Arrays;
-
 /**
  * Created by Administrator on 2018/6/23.
  */
@@ -82,7 +80,7 @@ public class GraphKruskal {
     public void  spanMinTree(){
         int k=0,w;
         for (int i=0;i<edgeSize;i++){
-            w= spanMinTree(0);
+            w= spanMinTree(i);
             if (k==0){
                 k=w;
             }else {
@@ -98,16 +96,21 @@ public class GraphKruskal {
         for (int i=f;i<edgeSize;i++){
             int n=find(parent,edges[i].begin);
             int m=find(parent,edges[i].end);
-            System.out.println(Arrays.toString(parent));
             if (n!=m){
                 parent[n]=m;
                 sum+=edges[i].weight;
                 System.out.println("起点为="+edges[i].begin+"终点为="+edges[i].end+"权值为="+edges[i].weight);
-            }else{       
-            	System.out.println("回环路-------"+"起点为="+edges[i].begin+"终点为="+edges[i].end+"权值为="+edges[i].weight);
             }
         }
-     
+        for (int i=0;i<f;i++){
+            int n=find(parent,edges[i].begin);
+            int m=find(parent,edges[i].end);
+            if (n!=m){
+                parent[n]=m;
+                sum+=edges[i].weight;
+                System.out.println("起点为="+edges[i].begin+"终点为="+edges[i].end+"权值为="+edges[i].weight);
+            }
+        }
         System.out.println("最小权值="+sum);
         return sum;
     }

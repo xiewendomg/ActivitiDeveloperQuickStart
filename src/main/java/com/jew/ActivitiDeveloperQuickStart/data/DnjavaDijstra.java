@@ -1,7 +1,5 @@
 package com.jew.ActivitiDeveloperQuickStart.data;
 
-import static com.jew.ActivitiDeveloperQuickStart.data.Graph.MAX;
-
 /**
  * Created by Administrator on 2018/6/24.
  */
@@ -13,15 +11,15 @@ public class DnjavaDijstra {
      */
     public Graph createGraph() {
         Graph graph = new Graph(9);
-        int[] a1 = new int[]{0, 1, 5, MAX, MAX, MAX, MAX, MAX, MAX};
-        int[] a2 = new int[]{1, 0, 3, 7, 5, MAX, MAX, MAX, MAX};
-        int[] a3 = new int[]{5, 3, 0, MAX, 1, 7, MAX, MAX, MAX};
-        int[] a4 = new int[]{MAX, 7, MAX, 0, 2, MAX, 3, MAX, MAX};
-        int[] a5 = new int[]{MAX, 5, 1, 2, 0, 3, 6, 9, MAX};
-        int[] a6 = new int[]{MAX, MAX, 7, MAX, 3, 0, MAX, 5, MAX};
-        int[] a7 = new int[]{MAX, MAX, MAX, 3, 6, MAX, 0, 2, 7};
-        int[] a8 = new int[]{MAX, MAX, MAX, MAX, 9, 5, 2, 0, 4};
-        int[] a9 = new int[]{MAX, MAX, MAX, MAX, MAX, MAX, 7, 4, 0};
+        int[] a1 = new int[]{0, 1, 5, Graph.MAX, Graph.MAX, Graph.MAX, Graph.MAX, Graph.MAX, Graph.MAX};
+        int[] a2 = new int[]{1, 0, 3, 7, 5, Graph.MAX, Graph.MAX, Graph.MAX, Graph.MAX};
+        int[] a3 = new int[]{5, 3, 0, Graph.MAX, 1, 7, Graph.MAX, Graph.MAX, Graph.MAX};
+        int[] a4 = new int[]{Graph.MAX, 7, Graph.MAX, 0, 2, Graph.MAX, 3, Graph.MAX, Graph.MAX};
+        int[] a5 = new int[]{Graph.MAX, 5, 1, 2, 0, 3, 6, 9, Graph.MAX};
+        int[] a6 = new int[]{Graph.MAX, Graph.MAX, 7, Graph.MAX, 3, 0, Graph.MAX, 5, Graph.MAX};
+        int[] a7 = new int[]{Graph.MAX, Graph.MAX, Graph.MAX, 3, 6, Graph.MAX, 0, 2, 7};
+        int[] a8 = new int[]{Graph.MAX, Graph.MAX, Graph.MAX, Graph.MAX, 9, 5, 2, 0, 4};
+        int[] a9 = new int[]{Graph.MAX, Graph.MAX, Graph.MAX, Graph.MAX, Graph.MAX, Graph.MAX, 7, 4, 0};
 
         graph.m[0] = a1;
         graph.m[1] = a2;
@@ -59,9 +57,9 @@ public class DnjavaDijstra {
         }
         graph.isVisited[j]=true;
         while (find(lowcost)) {
-            int min = MAX, minId = 0;
+            int min = Graph.MAX, minId = 0;
             for (int i = 0; i < lowcost.length; i++) {
-                if (lowcost[i]>0&&lowcost[i]<MAX&&min>lowcost[i]) {
+                if (lowcost[i]>0&&lowcost[i]< Graph.MAX&&min>lowcost[i]) {
                     min = lowcost[i];
                     minId = i;
                 }
