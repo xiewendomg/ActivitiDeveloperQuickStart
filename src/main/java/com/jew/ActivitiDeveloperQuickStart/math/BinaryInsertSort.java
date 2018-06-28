@@ -17,9 +17,6 @@ public class BinaryInsertSort {
 			int tmp = array[i];
 			while (low <= high) {
 				int mid = (high + low) >> 1;
-				if (mid % 2 != 0) {
-					System.out.println("sdfds");
-				}
 				if (array[mid] < tmp) {
 					low = mid + 1;
 				} else {
