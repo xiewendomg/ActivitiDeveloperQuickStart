@@ -3,35 +3,25 @@ package com.jew.ActivitiDeveloperQuickStart.math;
 import java.util.Arrays;
 
 /**
- * 二分法插入排序
- * 
- * @author Administrator
+ * 冒泡排序
+ * @author 谢文东
  *
  */
-public class BinaryInsertSort {
+public class BubbleSort {
 
-	public static void sort(int[] array) {
-		for (int i = 1; i < array.length; i++) {
-			int low = 0;
-			int high = i - 1;
-			int tmp = array[i];
-			while (low <= high) {
-				int mid = (high + low) >> 1;
-				if (array[mid] < tmp) {
-					low = mid + 1;
-				} else {
-					high = mid - 1;
+	public static void bubbleSort(int[] array){
+		for(int i=1;i<array.length;i++){
+			for(int j=0;j+1<array.length;j++){
+				if(array[j]>array[j+1]){
+					int tmp=array[j];
+					array[j]=array[j+1];
+					array[j+1]=tmp;
 				}
 			}
-			for (int j = i - 1; j >= low; j--) {
-				array[j + 1] = array[j];
-			}
-			array[low] = tmp;
+//			System.out.println(Arrays.toString(array));
 		}
 //		System.out.println(Arrays.toString(array));
-
 	}
-
 	public static void main(String[] args) {
 		long startTime=System.currentTimeMillis();
 		int[] array={1,3,4,5,7,-1,-5,2,8,9,0,-6,12,3,4,5,7,-1,-5,2,8,9,0,-6,12,3,4,5,7,-1,-5,2,8,9,0,-6,12,3,4,5,
@@ -189,6 +179,8 @@ public class BinaryInsertSort {
 				7,-1,-5,2,8,9,0,-6,12,3,4,5,7,-1,-5,2,8,9,0,-6,12,3,4,5,7,-1,-5,2,8,9,0,-6,12,3,4,5,7,-1,-5,2,8,9,
 				0,-6,12,3,4,5,7,-1,-5,2,8,9,0,-6,12,3,4,5,7,-1,-5,2,8,9,0,-6,12,3,4,5,7,-1,-5,2,8,9,0,-6,12,3,4,5,
 				7,-1,-5,2,8,9,0,-6,12};
-		sort(array);
+		bubbleSort(array);
+		long endTime=System.currentTimeMillis();
+		System.out.println("Time="+(endTime-startTime));
 	}
 }
